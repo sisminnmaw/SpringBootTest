@@ -8,7 +8,6 @@ public class TopScoreRestfulApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TopScoreRestfulApplication.class, args);
-		System.out.println("hello testing");
 	}
 
 }
