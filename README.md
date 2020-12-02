@@ -13,10 +13,10 @@ development stack
 - JUnit 5
 
 ## Document Tour
-- [To build and run app](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md)
-- [Run unit and integration tests](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md)
-- [API documentation](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md)
-- [Extra](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md)
+- [To build and run app](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#to-build-and-run-app)
+- [Run unit and integration tests](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#run-unit-and-integration-tests)
+- [API documentation](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#api-documentation)
+- [Extra](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#extra)
 
 ## To build and run app
 
@@ -39,10 +39,24 @@ $ gradle build
 ### Run App
 - Run *(topScoreRestful/src/main/java/smm/topScoreRestful/)* TopScoreRestfulApplication.java from Eclipse
 
+initial data already created in project, so you can run and test from **Postman** immediately.
+
 ## Run unit and integration tests
 - Run as Junit Test *(topScoreRestful/src/test/java/smm/topScoreRestful/controller/)* PlayerRecordControllerTest.java from Eclipse
 - Run as Junit Test *(topScoreRestful/src/test/java/smm/topScoreRestful/util)* commonUtilityTest.java from Eclipse
 
 ## API documentation
+
+base URL: http://localhost:8080 or http://localhost: + user defined port
+
+No | Method | Path | Description
+------------ | ------------ | ------------- | -------------
+1 | GET | /records | retrieve all players records
+2 | GET | /record/{id} | retrieve player record
+3 | POST | /record | create player record
+4 | DELETE | /record | delete player record
+5 | GET | /history | retrieve player records
+6 | GET | /filter | filter records
+
 
 ## Extra
