@@ -12,7 +12,7 @@ development stack
 - H2
 - JUnit 5
 
-## Document Tour
+## List of Contents
 - [To build and run app](https://github.com/sisminnmaw/SpringBootTest#to-build-and-run-app)
 - [Run unit and integration tests](https://github.com/sisminnmaw/SpringBootTest#run-unit-and-integration-tests)
 - [API documentation](https://github.com/sisminnmaw/SpringBootTest#api-documentation)
@@ -49,14 +49,139 @@ initial data already created in project, so you can run and test from **Postman*
 
 base URL: http://localhost:8080 or http://localhost: + user defined port
 
-No | Method | Path | Description
------------- | ------------ | ------------- | -------------
-1 | GET | /records | retrieve all players records
-2 | GET | /record/{id} | retrieve player record
-3 | POST | /record | create player record
-4 | DELETE | /record | delete player record
-5 | GET | /history | retrieve player records
-6 | GET | /filter | filter records
+No | Method | Path | Description | Responses Code
+------------ | ------------ | ------------- | ------------- | -------------
+1 | GET | /records | retrieve all player records | 200 (OK)
+2 | GET | /record/{id} | retrieve player record | 200 (OK), 404 (Not Found)
+3 | POST | /record | create player record | 201 (Created)
+4 | DELETE | /record/{id} | delete player record | 200 (OK), 404 (Not Found)
+5 | GET | /history | retrieve history and records of player | 200 (OK), 404 (Not Found)
+6 | GET | /filter | filter records | 200 (OK), 404 (Not Found)
+
+### 1. retrieve all player records - [GET] /records
+
+Parameters
+Name | type | Description | Required | Default value
+------------ | ------------ | ------------ | ------------ | ------------
+page | query | number of current page, first page value is 0 (n -1) | No | 0
+size | query | item size of page | No | 3
+
+responses data sample
+```
+{
+    "content": [
+        {
+            "id": 1,
+            "player": "Edo",
+            "score": 30,
+            "time": "2020-11-30 15:00:00"
+        }
+    ],
+    "pageable": {
+      ...
+    },
+    ....
+}
+```
+
+**Postman** request sample
+
+### 2. retrieve player record - [Get] /record/{id}
+
+Parameters
+Name | type | Description | Required
+------------ | ------------ | ------------ | ------------
+id | path | id of records | Yes
+
+**Postman** request sample
+
+### 3. create player record - [POST] /record
+
+Parameters
+Name | type | Description | Required
+------------ | ------------ | ------------ | ------------
+\- | body (json) | player record data | Yes
+
+post parameter sample
+```
+{
+    "player": "EDO",
+    "score": 100,
+    "time": "2021-01-30 00:00:00"
+}
+```
+
+**Postman** request sample
+
+### 4. delete player record - [DELETE] /record/{id}
+
+Parameters
+Name | type | Description | Required
+------------ | ------------ | ------------ | ------------
+id | path | id of records | Yes
+
+**Postman** request sample
+
+
+### 5. retrieve history and records of player - [GET] /history
+
+Parameters
+Name | type | Description | Required
+------------ | ------------ | ------------ | ------------
+player | query | target player name | Yes
+
+responses data sample
+```
+{
+    "topScore": 50,
+    "lowScore": 30,
+    "avgScore": 40.0,
+    "recordList": [
+        {
+            "id": 1,
+            "player": "edo",
+            "score": 30,
+            "time": "2020-11-30 15:00:00"
+        },
+        ...
+    ]
+}
+```
+
+**Postman** request sample
+
+### 6. filter records - [GET] /filter
+
+Parameters
+Name | type | Description | Required | Default value | Multiple times
+------------ | ------------ | ------------ | ------------ | ------------ | ------------
+page | query | number of current page, first page value is 0 (n -1) | No | 0 | No 
+size | query | item size of page | No | 3 | No 
+after | query | date value for filter (yyyy-MM-dd HH:mm:ss) | No | Null | No 
+before | query | date value for filter (yyyy-MM-dd HH:mm:ss) | No | Null | No 
+player | query | player name | No | Null | Yes 
+
+!! after, before and player filters can't use at the same time. only one filter per request. we will be upgraded in the next version for efficiency.
+
+responses data sample
+```
+{
+    "content": [
+        {
+            "id": 1,
+            "player": "Edo",
+            "score": 30,
+            "time": "2020-11-30 15:00:00"
+        }
+    ],
+    "pageable": {
+      ...
+    },
+    ....
+}
+```
+
+**Postman** request sample
 
 
 ## Extra
