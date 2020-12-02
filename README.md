@@ -13,10 +13,10 @@ development stack
 - JUnit 5
 
 ## Document Tour
-- [To build and run app](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#to-build-and-run-app)
-- [Run unit and integration tests](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#run-unit-and-integration-tests)
-- [API documentation](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#api-documentation)
-- [Extra](https://github.com/sisminnmaw/SpringBootTest/edit/main/README.md#extra)
+- [To build and run app](https://github.com/sisminnmaw/SpringBootTest#to-build-and-run-app)
+- [Run unit and integration tests](https://github.com/sisminnmaw/SpringBootTest#run-unit-and-integration-tests)
+- [API documentation](https://github.com/sisminnmaw/SpringBootTest#api-documentation)
+- [Extra](https://github.com/sisminnmaw/SpringBootTest#extra)
 
 ## To build and run app
 
