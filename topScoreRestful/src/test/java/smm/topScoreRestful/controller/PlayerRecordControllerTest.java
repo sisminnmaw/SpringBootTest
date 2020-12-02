@@ -43,6 +43,7 @@ class PlayerRecordControllerTest {
 	@Mock
 	PlayerRecordRepository prRepository;
 
+	//Test data
 	Optional<PlayerRecord> playerRecordOptional;
 	
 	PlayerRecord playerRecord;
@@ -75,7 +76,6 @@ class PlayerRecordControllerTest {
 	void testGetAllRecords() {
 		Pageable paging = PageRequest.of(0, 3);
 
-		// nothing happen just call the function
 		Mockito.lenient().when(prRepository.findAll(paging)).thenReturn(recordPage);
 		Page<PlayerRecord> resultPage = prController.getAllRecords(0, 3);
 		
