@@ -39,7 +39,7 @@ $ gradle build
 ### Run App
 - Run as Java Application *(topScoreRestful/src/main/java/smm/topScoreRestful/)* TopScoreRestfulApplication.java from Eclipse
 
-initial data already created in project, so you can run and test from **Postman** immediately.
+initial data already created in project, so you can run and test from **[Postman](https://www.postman.com/)** tool immediately.
 
 ## Run unit and integration tests
 - Run as Junit Test *(topScoreRestful/src/test/java/smm/topScoreRestful/controller/)* PlayerRecordControllerTest.java from Eclipse
