@@ -37,7 +37,7 @@ $ gradle build
 - open Eclipse IDE and Import Project. From **File>Import** and then Import widget will appear, choose **Existing Gradle Project** and choose *downloaded/file/path/topScoreRestful/* to **Project root directory**
 
 ### Run App
-- Run *(topScoreRestful/src/main/java/smm/topScoreRestful/)* TopScoreRestfulApplication.java from Eclipse
+- Run as Java Application *(topScoreRestful/src/main/java/smm/topScoreRestful/)* TopScoreRestfulApplication.java from Eclipse
 
 initial data already created in project, so you can run and test from **Postman** immediately.
 
@@ -92,6 +92,16 @@ Parameters
 Name | type | Description | Required
 ------------ | ------------ | ------------ | ------------
 id | path | id of records | Yes
+
+responses data sample
+```
+{
+    "id": 1,
+    "player": "edo",
+    "score": 30,
+    "time": "2020-11-30 15:00:00"
+}
+```
 
 **Postman** request sample
 
@@ -211,7 +221,48 @@ When you use H2 console from UI view. H2 JDBC connection is changed in new versi
 - http://localhost:8080/h2-console/ 
 
 ### quick API test patterns for your convenient
+- retrieve all player records
+  - [GET] http://localhost:8080/records
+  - [GET] http://localhost:8080/records?page=0&size=3
+  - [GET] http://localhost:8080/records?page=1&size=2
+- retrieve player record
+  - [GET] http://localhost:8080/record/1
+- create player record
+  - [POST] http://localhost:8080/record
+```
+    {
+        "player": "EDO",
+        "score": 100,
+        "time": "2021-01-30 00:00:00"
+    }
+```
+- create player record
+  - [POST] http://localhost:8080/record
+```
+    {
+        "player": "smith",
+        "score": 70,
+        "time": "2021-02-30 00:00:00"
+    }
+```
+- retrieve player records for created check
+  - [GET] http://localhost:8080/records?page=0&size=6
+- delete player record
+  - [DELETE] http://localhost:8080/record/2
+- retrieve player records for deleted check
+  - [GET] http://localhost:8080/records?page=0&size=6
+- retrieve history and records of player
+  - [GET] http://localhost:8080/history?player=EDO
+- filter records
+  - [GET] http://localhost:8080/filter
+  - [GET] http://localhost:8080/filter?player=EDO&player=JoHn
+  - [GET] http://localhost:8080/filter?player=EDO&player=JoHn&page=0&size=4
+  - [GET] http://localhost:8080/filter?after=2020-12-01%2012:00:00
+  - [GET] http://localhost:8080/filter?before=2020-12-01%2012:00:00
+
 
 ## Conclusion
+
+Thank you for reading documentation. The project is not completed, needs a lot of validations and features. You can ask me via mail or create issues for any trouble in the installation or any bug found in the project.
 
 
