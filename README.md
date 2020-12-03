@@ -85,6 +85,7 @@ responses data sample
 ```
 
 **Postman** request sample
+
 <img width="797" alt="Screen Shot 2020-12-03 at 10 05 38 AM" src="https://user-images.githubusercontent.com/5299365/100954962-fd6b6480-3558-11eb-8290-b0500c420a62.png">
 
 ### 2. retrieve player record - [Get] /record/{id}
@@ -105,6 +106,7 @@ responses data sample
 ```
 
 **Postman** request sample
+
 <img width="798" alt="Screen Shot 2020-12-03 at 10 07 37 AM" src="https://user-images.githubusercontent.com/5299365/100954959-fd6b6480-3558-11eb-948a-e4c7a1ff54d4.png">
 
 ### 3. create player record - [POST] /record
@@ -124,6 +126,7 @@ post parameter sample
 ```
 
 **Postman** request sample
+
 <img width="801" alt="Screen Shot 2020-12-03 at 11 14 50 AM" src="https://user-images.githubusercontent.com/5299365/100954953-f9d7dd80-3558-11eb-804e-92bd9eb6d199.png">
 
 ### 4. delete player record - [DELETE] /record/{id}
@@ -134,6 +137,7 @@ Name | type | Description | Required
 id | path | id of records | Yes
 
 **Postman** request sample
+
 <img width="801" alt="Screen Shot 2020-12-03 at 10 32 00 AM" src="https://user-images.githubusercontent.com/5299365/100954958-fcd2ce00-3558-11eb-94b5-5011e5589d27.png">
 
 ### 5. retrieve history and records of player - [GET] /history
@@ -162,6 +166,7 @@ responses data sample
 ```
 
 **Postman** request sample
+
 <img width="800" alt="Screen Shot 2020-12-03 at 10 33 22 AM" src="https://user-images.githubusercontent.com/5299365/100954956-fc3a3780-3558-11eb-9f94-7974652b9192.png">
 
 ### 6. filter records - [GET] /filter
@@ -196,6 +201,7 @@ responses data sample
 ```
 
 **Postman** request sample
+
 <img width="801" alt="Screen Shot 2020-12-03 at 10 36 13 AM" src="https://user-images.githubusercontent.com/5299365/100954955-fba1a100-3558-11eb-9a37-d8169ee66c35.png">
 
 ## Extra
