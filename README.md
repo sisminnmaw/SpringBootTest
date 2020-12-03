@@ -185,3 +185,33 @@ responses data sample
 
 
 ## Extra
+
+### initial Data
+
+initial record data crated below. you can change initial data in */topScoreRestful/src/main/resources/data.sql* . Data from this file will be created when project is start.
+
+id | player | score | time
+------------ | ------------ | ------------ | ------------
+1 | edo | 30 | 2020-12-01 00:00:00
+2 | smith | 50 | 2020-11-01 00:00:00
+3 | john | 60 | 2020-10-01 00:00:00
+4 | edo | 50 | 2021-01-01 00:00:00
+
+### Swagger API doc
+
+Also provided generated API documentations with Swagger. You can access from this links after project started.
+- http://localhost:8080/swagger-ui.html for API documentations UI view
+- http://localhost:8080/v2/api-docs for API documentations JSON format view
+
+
+### H2 UI
+
+When you use H2 console from UI view. H2 JDBC connection is changed in new version. In the old version default JDBC URL is *jdbc:h2:~/test* or *jdbc:h2:mem:test_mem* . For the new version, you need to look dbname from project console for access.
+
+- http://localhost:8080/h2-console/ 
+
+### quick API test patterns for your convenient
+
+## Conclusion
+
+
