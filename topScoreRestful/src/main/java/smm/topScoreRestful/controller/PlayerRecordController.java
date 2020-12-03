@@ -119,6 +119,10 @@ public class PlayerRecordController {
 	 */
 	@DeleteMapping("/record/{id}")
 	public void deleteRecord(@PathVariable int id) {
+		Optional<PlayerRecord> record = repository.findById(id);
+		//Not found 404
+		if (!record.isPresent())
+			throw new PlayerRecordNotFoundException("id-" + id);
 		repository.deleteById(id);
 	}
 	
@@ -189,6 +193,10 @@ public class PlayerRecordController {
 			List<String> playersList  = commonUtility.stringListToLowerCase(Arrays.asList(player));
 			pageRecords = repository.filterByNames(playersList,paging);
 		}
+		
+		//Not found 404
+		if(pageRecords.getContent().size()<1)
+			throw new PlayerRecordNotFoundException("No records");
 		
 		return pageRecords;
 	}
